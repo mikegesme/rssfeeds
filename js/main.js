@@ -2,7 +2,7 @@ var regExp = /When.+?2018/;
 
 var events = [];
 
-$.getJSON('http://www.whateverorigin.org/get?url=' + encodeURIComponent('http://www.cannonfalls.org/event/feed/') + '&callback=?', function(data){
+$.getJSON('https://whateverorigin.herokuapp.com/get?url=' + encodeURIComponent('http://www.cannonfalls.org/event/feed/') + '&callback=?', function(data){
     xmlString = data.contents;
     xmlDoc = $.parseXML(xmlString);
     $xml = $( xmlDoc );
