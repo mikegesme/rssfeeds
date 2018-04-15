@@ -67,11 +67,11 @@ request('http://www.hvlconference.org/g5-bin/client.cgi?cwellOnly=1&G5statusflag
     //     }
     // });
 
-    fs.writeFile("baseball.html", $.html(), function(err) {
-        if(err) {
-            return console.log(err);
-        }
-        console.log("Baseball file was saved!");
-    }); 
+    // fs.writeFile("baseball.html", $.html(), function(err) {
+    //     if(err) {
+    //         return console.log(err);
+    //     }
+    //     console.log("Baseball file was saved!");
+    // }); 
   }
 });
