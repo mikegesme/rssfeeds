@@ -24,7 +24,7 @@ request('http://www.cannonfalls.org/event/feed/', function (error, response, htm
             }
             else {
                 var desc = striptags($("description", item).text());
-                desc = desc.replace(/\s+/g,' ')
+                // desc = desc.replace(/\s+/g,' ')
                 $('description', item).replaceWith('<description>' + desc + '</description>');
                 // $(item).append('<something>TESTING123Z</something>');
             }
