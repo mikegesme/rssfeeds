@@ -7,7 +7,8 @@
         "gulp": "^3.9.1",
         "gulp-remote-src": "^0.4.3",
         "jquery": "^3.3.1",
-        "request": "^2.85.0"
+        "request": "^2.85.0",
+        "striptags": "^3.1.1"
     },
     "scripts": {
         "pullfeed": "pullfeed.js"

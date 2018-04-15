@@ -1,6 +1,7 @@
-var request = require('request');
-var cheerio = require('cheerio');
-var fs      = require('fs');
+var request     = require('request');
+var cheerio     = require('cheerio');
+var fs          = require('fs');
+var striptags   = require('striptags');
 
 var regExp = /When.+?2018/;
 
@@ -20,6 +21,12 @@ request('http://www.cannonfalls.org/event/feed/', function (error, response, htm
             twomonths.setDate(today.getDate() + 60);
             if (!(date >= today && date <= twomonths)) {
                 $(item).remove();
+            }
+            else {
+                var desc = striptags($("description", item).text());
+                desc = desc.replace(/\s+/g,' ')
+                $('description', item).replaceWith('<description>' + desc + '</description>');
+                // $(item).append('<something>TESTING123Z</something>');
             }
         }
     });
