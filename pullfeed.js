@@ -4,39 +4,22 @@ var fs          = require('fs');
 var striptags   = require('striptags');
 var chrono      = require('chrono-node');
 
-// Chamber of Commerce
+// Library
 request('https://cannonfalls.lib.mn.us/feed/', function (error, response, html) {
   if (!error && response.statusCode == 200) {
     $ = cheerio.load(html, { xmlMode: true });
     
     today = chrono.parseDate('Today');
-    console.log(today);
+    twomonths = new Date();
+    twomonths.setDate(twomonths.getDate() + 60);
 
     $('item').each(function(i, item) {
         title = $('title', item).text();
         if (date = chrono.strict.parseDate(title)) {
-            if (date > today) {
-                console.log(title);
+            if (!(today < date && date < twomonths)) {
+                $(item).remove();
             }
         }
-    //     // innerHTML = innerHTML.replace(/\s\s+/g, ' ');
-    //     // innerHTML = innerHTML.replace('</strong>', '');
-    //     // var matches = regExp.exec(innerHTML);
-    //     // if(matches[0]) {
-    //     //     var date = new Date(matches[0]);
-    //     //     var today = new Date();
-    //     //     var twomonths = new Date();
-    //     //     twomonths.setDate(today.getDate() + 60);
-    //     //     if (!(date >= today && date <= twomonths)) {
-    //     //         $(item).remove();
-    //     //     }
-    //     //     else {
-    //     //         var desc = striptags($("description", item).text());
-    //     //         // desc = desc.replace(/\s+/g,' ')
-    //     //         $('description', item).replaceWith('<description>' + desc + '</description>');
-    //     //         // $(item).append('<something>TESTING123Z</something>');
-    //     //     }
-    //     }
     });
 
     fs.writeFile("library.html", $.html(), function(err) {
