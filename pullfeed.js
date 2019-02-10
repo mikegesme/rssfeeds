@@ -58,6 +58,33 @@ request('https://zapier.com/engine/rss/3145575/city/', function (error, response
   }
 });
 
+// Cannon Falls TV FB
+request('https://zapier.com/engine/rss/3145575/cannonfallstv/', function (error, response, html) {
+  if (!error && response.statusCode == 200) {
+    $ = cheerio.load(html, { xmlMode: true });
+    
+    now = chrono.parseDate('now');
+    oneday = new Date();
+    oneday.setDate(oneday.getDate() - 1);
+
+    $('item').each(function(i, item) {
+        pubDate = $('pubDate', item).text();
+        if (date = chrono.strict.parseDate(pubDate)) {
+            if (date < oneday) {
+                $(item).remove();
+            }
+        }
+    });
+
+    fs.writeFile("cftv_fb.html", $.html(), function(err) {
+        if(err) {
+            return console.log(err);
+        }
+        console.log("CF TV FB file was saved!");
+    }); 
+  }
+});
+
 // request('http://www.hvlconference.org/g5-bin/client.cgi?cwellOnly=1&G5statusflag=view&school_id=7&G5button=13&G5genie=10&vw_schoolyear=1&vw_agl=5-1-18,&school_name_ical=Cannon%20Falls&RSSCalendar=1', function (error, response, html) {
 //   if (!error && response.statusCode == 200) {
 //     $ = cheerio.load(html, { xmlMode: true });
