@@ -38,7 +38,7 @@ request('https://zapier.com/engine/rss/3145575/city/', function (error, response
     
     now = chrono.parseDate('now');
     oneday = new Date();
-    oneday.setDate(oneday.getDate() - 9);
+    oneday.setDate(oneday.getDate() - 1);
 
     $('item').each(function(i, item) {
         pubDate = $('pubDate', item).text();
