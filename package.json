@@ -7,6 +7,7 @@
         "fs": "0.0.1-security",
         "gulp": "^3.9.1",
         "gulp-remote-src": "^0.4.3",
+        "html-entities": "^1.2.1",
         "jquery": "^3.3.1",
         "request": "^2.85.0",
         "striptags": "^3.1.1"

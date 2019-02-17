@@ -1,0 +1,371 @@
+https://cannonab.com/events/bernie-king-and-the-guilty-pleasures/
+https://cannonab.com/events/rob-meany-2/
+https://cannonab.com/events/team-trivia-7/
+https://cannonab.com/events/matt-browne/
+https://cannonab.com/events/troy-johnson/
+https://cannonab.com/events/operation-meet-up-23-to-zero/
+https://cannonab.com/events/eden-road-2/
+https://cannonab.com/events/mark-mraz-2/
+https://cannonab.com/events/team-trivia-8/
+https://cannonab.com/events/wood-sign-painting-party/
+CAB file was saved!
+https://cannonab.com/events/wood-sign-painting-party/
+{ [Function: initialize]
+  fn: 
+   initialize {
+     constructor: [Circular],
+     _originalRoot: 
+      { type: 'root',
+        name: 'root',
+        attribs: {},
+        children: [Array],
+        next: null,
+        prev: null,
+        parent: null } },
+  load: [Function],
+  html: [Function],
+  xml: [Function],
+  text: [Function],
+  parseHTML: [Function],
+  root: [Function],
+  contains: [Function],
+  merge: [Function],
+  _root: 
+   { type: 'root',
+     name: 'root',
+     attribs: {},
+     children: [ [Object], [Object], [Object], [Object] ],
+     next: null,
+     prev: null,
+     parent: null },
+  _options: 
+   { xmlMode: true,
+     withDomLvl1: true,
+     normalizeWhitespace: false,
+     xml: false,
+     decodeEntities: true } }
+__________________________
+https://cannonab.com/events/wood-sign-painting-party/
+{ [Function: initialize]
+  fn: 
+   initialize {
+     constructor: [Circular],
+     _originalRoot: 
+      { type: 'root',
+        name: 'root',
+        attribs: {},
+        children: [Array],
+        next: null,
+        prev: null,
+        parent: null } },
+  load: [Function],
+  html: [Function],
+  xml: [Function],
+  text: [Function],
+  parseHTML: [Function],
+  root: [Function],
+  contains: [Function],
+  merge: [Function],
+  _root: 
+   { type: 'root',
+     name: 'root',
+     attribs: {},
+     children: [ [Object], [Object], [Object], [Object] ],
+     next: null,
+     prev: null,
+     parent: null },
+  _options: 
+   { xmlMode: true,
+     withDomLvl1: true,
+     normalizeWhitespace: false,
+     xml: false,
+     decodeEntities: true } }
+__________________________
+https://cannonab.com/events/wood-sign-painting-party/
+{ [Function: initialize]
+  fn: 
+   initialize {
+     constructor: [Circular],
+     _originalRoot: 
+      { type: 'root',
+        name: 'root',
+        attribs: {},
+        children: [Array],
+        next: null,
+        prev: null,
+        parent: null } },
+  load: [Function],
+  html: [Function],
+  xml: [Function],
+  text: [Function],
+  parseHTML: [Function],
+  root: [Function],
+  contains: [Function],
+  merge: [Function],
+  _root: 
+   { type: 'root',
+     name: 'root',
+     attribs: {},
+     children: [ [Object], [Object], [Object], [Object] ],
+     next: null,
+     prev: null,
+     parent: null },
+  _options: 
+   { xmlMode: true,
+     withDomLvl1: true,
+     normalizeWhitespace: false,
+     xml: false,
+     decodeEntities: true } }
+__________________________
+https://cannonab.com/events/wood-sign-painting-party/
+{ [Function: initialize]
+  fn: 
+   initialize {
+     constructor: [Circular],
+     _originalRoot: 
+      { type: 'root',
+        name: 'root',
+        attribs: {},
+        children: [Array],
+        next: null,
+        prev: null,
+        parent: null } },
+  load: [Function],
+  html: [Function],
+  xml: [Function],
+  text: [Function],
+  parseHTML: [Function],
+  root: [Function],
+  contains: [Function],
+  merge: [Function],
+  _root: 
+   { type: 'root',
+     name: 'root',
+     attribs: {},
+     children: [ [Object], [Object], [Object], [Object] ],
+     next: null,
+     prev: null,
+     parent: null },
+  _options: 
+   { xmlMode: true,
+     withDomLvl1: true,
+     normalizeWhitespace: false,
+     xml: false,
+     decodeEntities: true } }
+__________________________
+https://cannonab.com/events/wood-sign-painting-party/
+{ [Function: initialize]
+  fn: 
+   initialize {
+     constructor: [Circular],
+     _originalRoot: 
+      { type: 'root',
+        name: 'root',
+        attribs: {},
+        children: [Array],
+        next: null,
+        prev: null,
+        parent: null } },
+  load: [Function],
+  html: [Function],
+  xml: [Function],
+  text: [Function],
+  parseHTML: [Function],
+  root: [Function],
+  contains: [Function],
+  merge: [Function],
+  _root: 
+   { type: 'root',
+     name: 'root',
+     attribs: {},
+     children: [ [Object], [Object], [Object], [Object] ],
+     next: null,
+     prev: null,
+     parent: null },
+  _options: 
+   { xmlMode: true,
+     withDomLvl1: true,
+     normalizeWhitespace: false,
+     xml: false,
+     decodeEntities: true } }
+__________________________
+https://cannonab.com/events/wood-sign-painting-party/
+{ [Function: initialize]
+  fn: 
+   initialize {
+     constructor: [Circular],
+     _originalRoot: 
+      { type: 'root',
+        name: 'root',
+        attribs: {},
+        children: [Array],
+        next: null,
+        prev: null,
+        parent: null } },
+  load: [Function],
+  html: [Function],
+  xml: [Function],
+  text: [Function],
+  parseHTML: [Function],
+  root: [Function],
+  contains: [Function],
+  merge: [Function],
+  _root: 
+   { type: 'root',
+     name: 'root',
+     attribs: {},
+     children: [ [Object], [Object], [Object], [Object] ],
+     next: null,
+     prev: null,
+     parent: null },
+  _options: 
+   { xmlMode: true,
+     withDomLvl1: true,
+     normalizeWhitespace: false,
+     xml: false,
+     decodeEntities: true } }
+__________________________
+https://cannonab.com/events/wood-sign-painting-party/
+{ [Function: initialize]
+  fn: 
+   initialize {
+     constructor: [Circular],
+     _originalRoot: 
+      { type: 'root',
+        name: 'root',
+        attribs: {},
+        children: [Array],
+        next: null,
+        prev: null,
+        parent: null } },
+  load: [Function],
+  html: [Function],
+  xml: [Function],
+  text: [Function],
+  parseHTML: [Function],
+  root: [Function],
+  contains: [Function],
+  merge: [Function],
+  _root: 
+   { type: 'root',
+     name: 'root',
+     attribs: {},
+     children: [ [Object], [Object], [Object], [Object] ],
+     next: null,
+     prev: null,
+     parent: null },
+  _options: 
+   { xmlMode: true,
+     withDomLvl1: true,
+     normalizeWhitespace: false,
+     xml: false,
+     decodeEntities: true } }
+__________________________
+https://cannonab.com/events/wood-sign-painting-party/
+{ [Function: initialize]
+  fn: 
+   initialize {
+     constructor: [Circular],
+     _originalRoot: 
+      { type: 'root',
+        name: 'root',
+        attribs: {},
+        children: [Array],
+        next: null,
+        prev: null,
+        parent: null } },
+  load: [Function],
+  html: [Function],
+  xml: [Function],
+  text: [Function],
+  parseHTML: [Function],
+  root: [Function],
+  contains: [Function],
+  merge: [Function],
+  _root: 
+   { type: 'root',
+     name: 'root',
+     attribs: {},
+     children: [ [Object], [Object], [Object], [Object] ],
+     next: null,
+     prev: null,
+     parent: null },
+  _options: 
+   { xmlMode: true,
+     withDomLvl1: true,
+     normalizeWhitespace: false,
+     xml: false,
+     decodeEntities: true } }
+__________________________
+https://cannonab.com/events/wood-sign-painting-party/
+{ [Function: initialize]
+  fn: 
+   initialize {
+     constructor: [Circular],
+     _originalRoot: 
+      { type: 'root',
+        name: 'root',
+        attribs: {},
+        children: [Array],
+        next: null,
+        prev: null,
+        parent: null } },
+  load: [Function],
+  html: [Function],
+  xml: [Function],
+  text: [Function],
+  parseHTML: [Function],
+  root: [Function],
+  contains: [Function],
+  merge: [Function],
+  _root: 
+   { type: 'root',
+     name: 'root',
+     attribs: {},
+     children: [ [Object], [Object], [Object], [Object] ],
+     next: null,
+     prev: null,
+     parent: null },
+  _options: 
+   { xmlMode: true,
+     withDomLvl1: true,
+     normalizeWhitespace: false,
+     xml: false,
+     decodeEntities: true } }
+__________________________
+https://cannonab.com/events/wood-sign-painting-party/
+{ [Function: initialize]
+  fn: 
+   initialize {
+     constructor: [Circular],
+     _originalRoot: 
+      { type: 'root',
+        name: 'root',
+        attribs: {},
+        children: [Array],
+        next: null,
+        prev: null,
+        parent: null } },
+  load: [Function],
+  html: [Function],
+  xml: [Function],
+  text: [Function],
+  parseHTML: [Function],
+  root: [Function],
+  contains: [Function],
+  merge: [Function],
+  _root: 
+   { type: 'root',
+     name: 'root',
+     attribs: {},
+     children: [ [Object], [Object], [Object], [Object] ],
+     next: null,
+     prev: null,
+     parent: null },
+  _options: 
+   { xmlMode: true,
+     withDomLvl1: true,
+     normalizeWhitespace: false,
+     xml: false,
+     decodeEntities: true } }
+__________________________
