@@ -3,6 +3,7 @@ var cheerio     = require('cheerio');
 var fs          = require('fs');
 var striptags   = require('striptags');
 var chrono      = require('chrono-node');
+var moment      = require('moment');
 var Entities  = require('html-entities').XmlEntities;
 
 var entities = new Entities();
@@ -72,8 +73,9 @@ request('https://cannonab.com/events/feed/', function (error, response, html) {
     
     $('item').each(function(i, item) {
         link = $('link', item).text();
+        pubDate = $('pubDate', item).text();
         let desc = null;
-        let newItem = {i, link, desc, item};
+        let newItem = {i, link, desc, item, pubDate};
         CABitems.push(newItem);
     });
 
@@ -95,6 +97,11 @@ function addCABitems() {
                 var regExp = /clear:both\"\s\/>\s([\S\s]*?)<\/p>/;
                 var matchesB = regExp.exec(htmlB);
                 var desc = entities.decode(striptags(matchesB[1]));
+                eventDateInfo = chrono.parse(CABitem.pubDate);
+                printDate = eventDateInfo[0].start.date();
+                // printDate = printDa
+                printDate = moment(printDate).format('dddd, MMMM Do, h:mm a');
+                desc = printDate + ' ' + desc;
                 // CABitem.desc = desc;
                 cabDOC('channel').append(CABitem.item);
                 cabDOC('description', CABitem.item).text(desc);
