@@ -8,6 +8,46 @@ var Entities  = require('html-entities').XmlEntities;
 
 var entities = new Entities();
 
+// City Calendar
+request('https://www.cannonfallsmn.gov/calendar', function (error, response, html) {
+  if (!error && response.statusCode == 200) {
+    nextmonth = chrono.parseDate('Next month');
+    nextmonth = moment(nextmonth).format('YYYY-MM');
+    request('https://www.cannonfallsmn.gov/calendar/month/' + nextmonth, function (error2, response2, html2) {
+        if (!error2 && response2.statusCode == 200) {
+            html += html2;
+            $ = cheerio.load(html, { xmlMode: true });
+
+            var output = fs.readFileSync('xmlhead.xml', 'utf8');
+            output += '<description>';
+
+            $('.future .item .field-content a').each(function(i, item) {
+                meeting = $(item).text();
+                date = $(item).attr('title');
+                odate = date.toLowerCase();
+                date = chrono.parseDate(date);
+                if (odate.includes('all day')) {
+                    date = moment(date).format('M/D (ddd), ') + 'All Day';
+                } 
+                else {
+                    date = moment(date).format('M/D (ddd), h:mm A');
+                }
+                output += date + ': ' + meeting + '\n';
+            });
+
+            output += '</description></item></channel></rss>';
+
+            fs.writeFile("coc-cal.html", output, function(err) {
+                if(err) {
+                    return console.log(err);
+                }
+                console.log("City Cal file was saved!");
+            }); 
+        }
+    });
+  }
+});
+
 // Library
 request('https://cannonfalls.lib.mn.us/feed/', function (error, response, html) {
   if (!error && response.statusCode == 200) {
@@ -63,7 +103,6 @@ request('https://zapier.com/engine/rss/3145575/city/', function (error, response
 });
 
 // CannonAB
-
 let cabDOC = null;
 let CABitems = [];
 
