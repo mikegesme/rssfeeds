@@ -19,7 +19,7 @@ request('https://www.cannonfallsmn.gov/calendar', function (error, response, htm
             $ = cheerio.load(html, { xmlMode: true });
 
             var output = fs.readFileSync('xmlhead.xml', 'utf8');
-            output += '<description>';
+            // output += '<description>';
 
             $('.future .item .field-content a').each(function(i, item) {
                 meeting = $(item).text();
