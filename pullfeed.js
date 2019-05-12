@@ -44,8 +44,14 @@ request('https://www.cannonfallsmn.gov/calendar', function (error, response, htm
                 console.log("City Cal file was saved!");
             }); 
         }
+        else { 
+            console.log("ERROR - City Cal B")
+        }
     });
   }
+  else { 
+    console.log("ERROR - City Cal A")
+}
 });
 
 // Library
