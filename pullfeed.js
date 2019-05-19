@@ -9,7 +9,6 @@ var Entities  = require('html-entities').XmlEntities;
 var entities = new Entities();
 
 // City Calendar
-/*
 request('https://www.cannonfallsmn.gov/calendar', function (error, response, html) {
   if (!error && response.statusCode == 200) {
     nextmonth = chrono.parseDate('Next month');
@@ -55,7 +54,6 @@ request('https://www.cannonfallsmn.gov/calendar', function (error, response, htm
     console.log(error);
 }
 });
-*/
 
 // Library
 request('https://cannonfalls.lib.mn.us/feed/', function (error, response, html) {
@@ -120,7 +118,6 @@ request('https://zapier.com/engine/rss/3145575/city/', function (error, response
 // CannonAB
 let cabDOC = null;
 let CABitems = [];
-/*
 request('https://cannonab.com/events/feed/', function (error, response, html) {
   if (!error && response.statusCode == 200) {
     $ = cheerio.load(html, { xmlMode: true });
@@ -141,6 +138,7 @@ request('https://cannonab.com/events/feed/', function (error, response, html) {
 });
 
 function addCABitems() {
+    // CABitems = CABitems.slice(0, 3);
     CABitems.forEach(function(CABitem, i) {
 
             let link = CABitem.link;
@@ -159,8 +157,10 @@ function addCABitems() {
                 // CABitem.desc = desc;
                 cabDOC('channel').append(CABitem.item);
                 cabDOC('description', CABitem.item).text(desc);
-                // console.log(cabDOC('description', CABitem).text());
-                CABitems.splice(i-1, 1);
+                // CABitems.splice(i-1, 1);
+                CABitems = CABitems.filter(function(currentItem) {
+                    return currentItem !== CABitem;
+                })
                 if (0 == CABitems.length) {
                     writeCABfile();
                 }
@@ -179,7 +179,6 @@ function writeCABfile() {
     }); 
 
 }
-*/
 
 // // Cannon Falls TV FB
 /*
