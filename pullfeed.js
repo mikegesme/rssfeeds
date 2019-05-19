@@ -9,6 +9,7 @@ var Entities  = require('html-entities').XmlEntities;
 var entities = new Entities();
 
 // City Calendar
+/*
 request('https://www.cannonfallsmn.gov/calendar', function (error, response, html) {
   if (!error && response.statusCode == 200) {
     nextmonth = chrono.parseDate('Next month');
@@ -52,13 +53,11 @@ request('https://www.cannonfallsmn.gov/calendar', function (error, response, htm
   else { 
     console.log("ERROR - City Cal A");
     console.log(error);
-    console.log(response.statusCode);
-    console.log(response.statusMessage);
 }
 });
+*/
 
 // Library
-/*
 request('https://cannonfalls.lib.mn.us/feed/', function (error, response, html) {
   if (!error && response.statusCode == 200) {
     $ = cheerio.load(html, { xmlMode: true });
@@ -83,8 +82,11 @@ request('https://cannonfalls.lib.mn.us/feed/', function (error, response, html) 
         console.log("Library file was saved!");
     }); 
   }
+  else {
+      console.log('Library Error A');
+      console.log(error);
+  }
 });
-*/
 
 // City FB
 /*
