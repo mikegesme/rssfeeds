@@ -55,6 +55,7 @@ request('https://www.cannonfallsmn.gov/calendar', function (error, response, htm
 });
 
 // Library
+/*
 request('https://cannonfalls.lib.mn.us/feed/', function (error, response, html) {
   if (!error && response.statusCode == 200) {
     $ = cheerio.load(html, { xmlMode: true });
@@ -80,8 +81,10 @@ request('https://cannonfalls.lib.mn.us/feed/', function (error, response, html) 
     }); 
   }
 });
+*/
 
 // City FB
+/*
 request('https://zapier.com/engine/rss/3145575/city/', function (error, response, html) {
   if (!error && response.statusCode == 200) {
     $ = cheerio.load(html, { xmlMode: true });
@@ -107,11 +110,12 @@ request('https://zapier.com/engine/rss/3145575/city/', function (error, response
     }); 
   }
 });
+*/
 
 // CannonAB
 let cabDOC = null;
 let CABitems = [];
-
+/*
 request('https://cannonab.com/events/feed/', function (error, response, html) {
   if (!error && response.statusCode == 200) {
     $ = cheerio.load(html, { xmlMode: true });
@@ -170,8 +174,10 @@ function writeCABfile() {
     }); 
 
 }
+*/
 
 // // Cannon Falls TV FB
+/*
 request('https://zapier.com/engine/rss/3145575/cannonfallstv/', function (error, response, html) {
   if (!error && response.statusCode == 200) {
     $ = cheerio.load(html, { xmlMode: true });
@@ -197,6 +203,7 @@ request('https://zapier.com/engine/rss/3145575/cannonfallstv/', function (error,
     }); 
   }
 });
+*/
 
 // request('http://www.hvlconference.org/g5-bin/client.cgi?cwellOnly=1&G5statusflag=view&school_id=7&G5button=13&G5genie=10&vw_schoolyear=1&vw_agl=5-1-18,&school_name_ical=Cannon%20Falls&RSSCalendar=1', function (error, response, html) {
 //   if (!error && response.statusCode == 200) {
