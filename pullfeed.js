@@ -51,6 +51,9 @@ request('https://www.cannonfallsmn.gov/calendar', function (error, response, htm
   }
   else { 
     console.log("ERROR - City Cal A")
+    console.log(error);
+    console.log(response.statusCode);
+    console.log(response.statusMessage);
 }
 });
 
