@@ -122,12 +122,20 @@ request('https://cannonab.com/events/feed/', function (error, response, html) {
   if (!error && response.statusCode == 200) {
     $ = cheerio.load(html, { xmlMode: true });
     
+    today = chrono.parseDate('Today');
+    twomonths = new Date();
+    twomonths.setDate(twomonths.getDate() + 60);
+
     $('item').each(function(i, item) {
-        link = $('link', item).text();
         pubDate = $('pubDate', item).text();
-        let desc = null;
-        let newItem = {i, link, desc, item, pubDate};
-        CABitems.push(newItem);
+        if (date = chrono.strict.parseDate(pubDate)) {
+            if ((today < date && date < twomonths)) {
+                link = $('link', item).text();
+                let desc = null;
+                let newItem = {i, link, desc, item, pubDate};
+                CABitems.push(newItem);
+            }
+        }
     });
 
     $('item').remove();
@@ -138,38 +146,52 @@ request('https://cannonab.com/events/feed/', function (error, response, html) {
 });
 
 function addCABitems() {
-    // CABitems = CABitems.slice(0, 3);
+
+    let num = CABitems.length;
+    let count = 0;
+
     CABitems.forEach(function(CABitem, i) {
 
-            let link = CABitem.link;
+           let link = CABitem.link;
     
            request(link, function (errorB, responseB, htmlB) {
             if (!errorB && responseB.statusCode == 200) {
                 $B = cheerio.load(htmlB, { xmlMode: false });
-                var regExp = /clear:both\"\s\/>\s([\S\s]*?)<\/p>/;
+                // var regExp = /clear:both\"\s\/>\s([\S\s]*?)<\/p>/;
+                var regExpLoc = /Location<\/strong><br\/>([\S\s]*?)<\/a>/;
+                var matchesLoc = regExpLoc.exec(htmlB);
+                var location = entities.decode(striptags(matchesLoc[1])).replace(/(\r\n|\n|\r)/gm, "").trim();
+                var regExp = /clear:both\"\s\/>\s([\S\s]*?)fl-post-content/;
                 var matchesB = regExp.exec(htmlB);
-                var desc = entities.decode(striptags(matchesB[1]));
+                var desc = entities.decode(striptags(matchesB[1])).replace(/(\r\n|\n|\r)/gm, "").trim();
                 eventDateInfo = chrono.parse(CABitem.pubDate);
                 printDate = eventDateInfo[0].start.date();
-                // printDate = printDa
                 printDate = moment(printDate).format('dddd, MMMM Do, h:mm a');
-                desc = printDate + ' ' + desc;
-                // CABitem.desc = desc;
-                cabDOC('channel').append(CABitem.item);
-                cabDOC('description', CABitem.item).text(desc);
-                // CABitems.splice(i-1, 1);
-                CABitems = CABitems.filter(function(currentItem) {
-                    return currentItem !== CABitem;
-                })
-                if (0 == CABitems.length) {
+                desc = printDate + ' - ' + location + '\n' + desc;
+                CABitem.desc = desc;
+                count++;
+                if (count == num) {
+                    writeCABfile();
+                }
+            }
+            else {
+                count++;
+                if (count == num) {
                     writeCABfile();
                 }
             }
         });
+
     });
+
 }
 
 function writeCABfile() {
+
+    CABitems.forEach(function(CABitem, i) {
+        cabDOC('channel').append(CABitem.item);
+        cabDOC('description', CABitem.item).text(CABitem.desc);
+    });
 
     fs.writeFile("cab.html", cabDOC.html(), function(err) {
         if(err) {
