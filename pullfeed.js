@@ -160,15 +160,18 @@ function addCABitems() {
                 // var regExp = /clear:both\"\s\/>\s([\S\s]*?)<\/p>/;
                 var regExpLoc = /Location<\/strong><br\/>([\S\s]*?)<\/a>/;
                 var matchesLoc = regExpLoc.exec(htmlB);
-                var location = entities.decode(striptags(matchesLoc[1])).replace(/(\r\n|\n|\r)/gm, "").trim();
-                var regExp = /clear:both\"\s\/>\s([\S\s]*?)fl-post-content/;
-                var matchesB = regExp.exec(htmlB);
-                var desc = entities.decode(striptags(matchesB[1])).replace(/(\r\n|\n|\r)/gm, "").trim();
-                eventDateInfo = chrono.parse(CABitem.pubDate);
-                printDate = eventDateInfo[0].start.date();
-                printDate = moment(printDate).format('dddd, MMMM Do, h:mm a');
-                desc = printDate + ' - ' + location + '\n' + desc;
-                CABitem.desc = desc;
+                if (matchesLoc)
+                {
+                    var location = entities.decode(striptags(matchesLoc[1])).replace(/(\r\n|\n|\r)/gm, "").trim();
+                    var regExp = /clear:both\"\s\/>\s([\S\s]*?)fl-post-content/;
+                    var matchesB = regExp.exec(htmlB);
+                    var desc = entities.decode(striptags(matchesB[1])).replace(/(\r\n|\n|\r)/gm, "").trim();
+                    eventDateInfo = chrono.parse(CABitem.pubDate);
+                    printDate = eventDateInfo[0].start.date();
+                    printDate = moment(printDate).format('dddd, MMMM Do, h:mm a');
+                    desc = printDate + ' - ' + location + '\n' + desc;
+                    CABitem.desc = desc;
+                }
                 count++;
                 if (count == num) {
                     writeCABfile();
