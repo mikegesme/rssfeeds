@@ -6,7 +6,7 @@
         "id": "000001",
         "title": "Test Series",
         "episodes": [{
-            "id": "000001",
+            "id": "000002",
             "title": "The First Episode of the test series",
             "content": {
                 "dateAdded": "2019-12-27T22:21:37+00:00",
@@ -17,7 +17,7 @@
                 }],
                 "duration": 13,
                 "captions": [],
-                "adBreaks": ["00:15:00", "00:30:00", "00:45:00"],
+                "adBreaks": [],
                 "language": "en",
                 "trickPlayFiles": []
             },
