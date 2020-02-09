@@ -12,9 +12,17 @@ request('http://tighty.tv/cablecastapi/v1/scheduleitems?start=2020-01-18&end=202
   if (!error && response.statusCode == 200) {
       output = [];
       json = JSON.parse(html);
-      // items = html.scheduleItems;
-      for (item in json.scheduleItems[0]) {
-          output.push(item);
+      items = json.scheduleItems;
+      var count = 0;
+      // console.log(items);
+      for (item in items) {
+        // console.log(item);
+        // console.log(items[count]);
+          var run = [];
+          run.push(items[count].show);
+          run.push(items[count].runDateTime);
+          output.push(run);
+          count+=1;
       }
     fs.writeFile("schedule.json", JSON.stringify(output), function(err) {
         if(err) {
