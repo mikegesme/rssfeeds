@@ -8,7 +8,7 @@ var moment      = require('moment');
 
 // var entities = new Entities();
 
-runs = {};
+runs = [];
 
 request('http://tighty.tv/cablecastapi/v1/scheduleitems?start=2020-01-18&end=2020-01-19', function (error, response, html) {
   if (!error && response.statusCode == 200) {
@@ -18,14 +18,19 @@ request('http://tighty.tv/cablecastapi/v1/scheduleitems?start=2020-01-18&end=202
         request('http://tighty.tv/cablecastapi/v1/shows/' + item.show, function (error2, response2, html2) {
           if (!error2 && response2.statusCode == 200) {
             json2 = JSON.parse(html2);
-            var run = {};
-            run['showID'] = item.show;
-            // run.push(item.runDateTime);
-            // run.push(moment(item.runDateTime).format('h:mm A'));
-            // run.push(json2.show.cgTitle);
-            // runs.push(run);
+            const run = {
+              showID: item.show,
+              dateTime: item.runDateTime,
+              timestamp: moment(item.runDateTime).format('X'),
+              time: moment(item.runDateTime).format('h:mm A'),
+              cgTitle: json2.show.cgTitle
+            };
+            runs.push(run);
           }
-          if (runs.length == items.length) writeFile();
+          if (runs.length == items.length) {
+            runs.sort((a, b) => a.timestamp - b.timestamp);
+            writeFile();
+          }
         });
       });
   }
