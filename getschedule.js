@@ -4,30 +4,51 @@ var fs          = require('fs');
 var striptags   = require('striptags');
 var chrono      = require('chrono-node');
 var moment      = require('moment');
-var Entities  = require('html-entities').XmlEntities;
+// var Entities  = require('html-entities').XmlEntities;
 
-var entities = new Entities();
+// var entities = new Entities();
+
+runs = {};
 
 request('http://tighty.tv/cablecastapi/v1/scheduleitems?start=2020-01-18&end=2020-01-19', function (error, response, html) {
   if (!error && response.statusCode == 200) {
-      output = [];
       json = JSON.parse(html);
       items = json.scheduleItems;
-      var count = 0;
-      // console.log(items);
-      for (item in items) {
-        // console.log(item);
-        // console.log(items[count]);
-          var run = [];
-          run.push(items[count].show);
-          run.push(items[count].runDateTime);
-          output.push(run);
-          count+=1;
-      }
-    fs.writeFile("schedule.json", JSON.stringify(output), function(err) {
-        if(err) {
-            return console.log(err);
-        }
-    }); 
+      items.forEach((item) => {
+        request('http://tighty.tv/cablecastapi/v1/shows/' + item.show, function (error2, response2, html2) {
+          if (!error2 && response2.statusCode == 200) {
+            json2 = JSON.parse(html2);
+            var run = {};
+            run['showID'] = item.show;
+            // run.push(item.runDateTime);
+            // run.push(moment(item.runDateTime).format('h:mm A'));
+            // run.push(json2.show.cgTitle);
+            // runs.push(run);
+          }
+          if (runs.length == items.length) writeFile();
+        });
+      });
   }
 });
+
+// const addShow = () => {
+
+//   request('http://tighty.tv/cablecastapi/v1/shows/' + items[count].show, function (error2, response2, html2) {
+//     if (!error2 && response2.statusCode == 200) {
+//       json2 = JSON.parse(html2);
+//       run.push(json2.show.cgTitle);
+//       runs.push(run);
+//     }
+//     if (runs.length == items.length) writeFile();
+//   });
+
+// }
+
+
+const writeFile = () => {
+  fs.writeFile("schedule.json", JSON.stringify(runs), function(err) {
+    if(err) {
+        return console.log(err);
+    }
+  }); 
+}
