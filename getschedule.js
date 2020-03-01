@@ -1,12 +1,10 @@
 var request     = require('request');
-var cheerio     = require('cheerio');
+// var cheerio     = require('cheerio');
 var fs          = require('fs');
-var striptags   = require('striptags');
-var chrono      = require('chrono-node');
+// var striptags   = require('striptags');
+// var chrono      = require('chrono-node');
 var moment      = require('moment');
 // var Entities  = require('html-entities').XmlEntities;
-
-// var entities = new Entities();
 
 runs = [];
 
